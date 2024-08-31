@@ -9,6 +9,10 @@
   "categories": [
     "Other"
   ],
+  "repository": {
+        "type": "git",
+        "url": "https://github.com/gcherv/simple-code-coverage"
+    },
   "activationEvents": ["*"],
   "main": "./out/extension.js",
   "contributes": {
@@ -23,7 +27,6 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/cli": "^0.11.25",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
     "@types/vscode": "^1.92.0",
@@ -35,7 +38,6 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@salesforce/cli": "^2.56.7",
     "@salesforce/core": "^8.5.1"
   }
 }

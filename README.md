@@ -6,7 +6,7 @@ This is extension allows you to see the code coverage of currently open apex cla
 
 ## Requirements
 
-- You must have [SFDX CLI installed]
+- You must have SFDX CLI installed.
 
 ## Usage
 - When the currect open file is written in Apex language, you will see a little sign in the bottom section of your VS Code on the left sign that would show code coverage for this code.

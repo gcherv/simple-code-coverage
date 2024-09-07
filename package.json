@@ -2,7 +2,7 @@
   "name": "simple-code-coverage",
   "displayName": "Simple Code Coverage",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "gcherv",
   "icon": "images/icon.png",
   "engines": {

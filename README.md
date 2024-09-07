@@ -1,17 +1,26 @@
 # Simple Code Coverage
 
-This is extension allows you to see the code coverage of currently open apex class without opening developer console.
+This extension allows you to view the code coverage of the currently open Apex class directly within VS Code, without needing to open the Developer Console.
 
-*This is still early version, please be patient and help in improving this extension by submitting issues.*
-
-## Requirements
-
-- You must have SFDX CLI installed.
-
-## Usage
-- When the currect open file is written in Apex language, you will see a little sign in the bottom section of your VS Code on the left sign that would show code coverage for this code.
+**Note**: This is an early version of the extension. We appreciate your patience and encourage you to contribute by submitting issues or feedback.
 
 ![Code Coverage Indicator](images/example.gif)
 
-## License 
-This project is licensed under the terms of the [MIT license](LICENSE).
+## Features
+
+- **Code Coverage Display**: Shows code coverage for Apex files directly in the VS Code status bar.
+
+## Requirements
+
+- **SFDX CLI**: Ensure you have the Salesforce CLI (SFDX CLI) installed on your system.
+
+## Usage
+
+1. **Open an Apex File**: The extension will detect when an Apex file is open.
+2. **View Code Coverage**: A small indicator will appear in the bottom left corner of the VS Code status bar, showing the code coverage for the open file.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Feel free to reach out if you have any questions or need assistance!

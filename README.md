@@ -1,7 +1,7 @@
 # Simple Code Coverage
 
 This is extension allows you to see the code coverage of currently open apex class without opening developer console.
-*This is still early version, please be patient and help in improving this extension by submitting issues.
+*This is still early version, please be patient and help in improving this extension by submitting issues.*
 
 ## Requirements
 

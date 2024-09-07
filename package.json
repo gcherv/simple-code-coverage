@@ -3,6 +3,7 @@
   "displayName": "Simple Code Coverage",
   "description": "",
   "version": "0.0.1",
+  "publisher": "gcherv",
   "engines": {
     "vscode": "^1.92.0"
   },

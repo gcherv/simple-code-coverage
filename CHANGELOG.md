@@ -1,9 +1,14 @@
 # Change Log
 
-All notable changes to the "simple-code-coverage" extension will be documented in this file.
+## [0.0.3]
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Setup Documentation: Added README.md and CHANGELOG.md files to provide basic information and track changes.
 
-## [Unreleased]
+## [0.0.2]
 
-- Initial release
+- UI Enhancements: Added a logo to improve branding.
+- Code Coverage: Implemented rounded corners for the code coverage display for a more polisßßhed look.
+
+## [0.0.1]
+
+- Initial Release: Launched the first version of the extension with basic functionality.

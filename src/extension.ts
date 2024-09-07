@@ -25,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const codeCoverage = await calculateCodeCoverage(fileName);
 
 		if(codeCoverage){
-			statusBarItem.text = fileName + ': '+codeCoverage+'%';
+			statusBarItem.text = fileName + ': '+ parseFloat((codeCoverage).toFixed(2)) +'%';
 		} else {
 			statusBarItem.text = 'No code coverage.';
 		}

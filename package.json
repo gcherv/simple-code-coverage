@@ -2,9 +2,9 @@
   "name": "simple-code-coverage",
   "displayName": "Simple Code Coverage",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "gcherv",
-  "icon": "icon.png",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.92.0"
   },

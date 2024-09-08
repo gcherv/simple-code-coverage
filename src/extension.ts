@@ -24,10 +24,14 @@ export function activate(context: vscode.ExtensionContext) {
 		
 		const codeCoverage = await calculateCodeCoverage(fileName);
 
+		console.log(JSON.stringify(codeCoverage));
+
 		if(codeCoverage){
-			statusBarItem.text = fileName + ': '+ parseFloat((codeCoverage).toFixed(2)) +'%';
+			statusBarItem.text = fileName + ': '+ parseFloat((codeCoverage.percentage).toFixed(2)) +'%';
+			statusBarItem.tooltip = 'You need '+codeCoverage.linesToNextPercentage+' more lines to reach the next percentage.';
 		} else {
 			statusBarItem.text = 'No code coverage.';
+			statusBarItem.tooltip = '';
 		}
 	};
 

@@ -1,8 +1,8 @@
 {
   "name": "simple-code-coverage",
   "displayName": "Simple Code Coverage",
-  "description": "",
-  "version": "0.0.3",
+  "description": "Real-time Apex code coverage for the current file, designed for Salesforce developers.",
+  "version": "0.0.4",
   "publisher": "gcherv",
   "icon": "images/icon.png",
   "engines": {
@@ -41,5 +41,13 @@
   },
   "dependencies": {
     "@salesforce/core": "^8.5.1"
-  }
+  },
+  "keywords": [
+    "Salesforce",
+    "Apex",
+    "Code Coverage",
+    "Test Coverage",
+    "Development",
+    "VS Code"
+]
 }

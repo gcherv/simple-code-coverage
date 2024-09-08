@@ -12,7 +12,10 @@ export async function calculateCodeCoverage(fileName: string) {
 
 	const totalLines = coverageAggregate.NumLinesCovered + coverageAggregate.NumLinesUncovered;
 
-	return (coverageAggregate.NumLinesCovered / totalLines) * 100;
+	const codeCoverage = (coverageAggregate.NumLinesCovered / totalLines) * 100;
+	const linesToNextPercentage = Math.ceil((Math.ceil(codeCoverage) / 100) * totalLines) - coverageAggregate.NumLinesCovered;
+
+	return {percentage : codeCoverage, linesToNextPercentage: linesToNextPercentage};
 };
 
 // Connection to the user's standard org

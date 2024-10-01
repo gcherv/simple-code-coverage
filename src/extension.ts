@@ -15,23 +15,25 @@ export function activate(context: vscode.ExtensionContext) {
 		if(vscode.window.activeTextEditor){ // there is a file open
 			fileName = path.basename(vscode.window.activeTextEditor.document.fileName).split('.')[0]; // getting current file name without its extension
 		} else {
+			statusBarItem.text = '';
 			statusBarItem.hide(); // if is currently shown, hide
 			return;
 		}
 
-		statusBarItem.text = 'Loading...';
-		statusBarItem.show();
+		if(!statusBarItem.text || statusBarItem.text === '' || statusBarItem.text === 'Loading...'){
+			statusBarItem.text = 'Loading...';
+			statusBarItem.show();
+		} else if(!statusBarItem.text.includes('$(sync~spin)')){
+			statusBarItem.text += ' $(sync~spin)';
+		}
 		
 		const codeCoverage = await calculateCodeCoverage(fileName);
 
-		console.log(JSON.stringify(codeCoverage));
-
 		if(codeCoverage){
-			statusBarItem.text = fileName + ': '+ parseFloat((codeCoverage.percentage).toFixed(2)) +'%';
-			statusBarItem.tooltip = 'You need '+codeCoverage.linesToNextPercentage+' more lines to reach the next percentage.';
+			var linesToNextPercentageText = (codeCoverage.linesToNextPercentage ? ' ('+codeCoverage.linesToNextPercentage+' line'+(codeCoverage.linesToNextPercentage > 1 ? 's' : '')+' until '+codeCoverage.nextPercentage+'%)' : '');
+			statusBarItem.text = 'Coverage: '+parseFloat((codeCoverage.percentage).toFixed(2)) +'%' + linesToNextPercentageText;
 		} else {
 			statusBarItem.text = 'No code coverage.';
-			statusBarItem.tooltip = '';
 		}
 	};
 

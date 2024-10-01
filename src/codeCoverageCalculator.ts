@@ -6,16 +6,26 @@ export async function calculateCodeCoverage(fileName: string) {
 	const result = await conn.tooling.query<{ApexClassOrTrigger: {Name: string}, NumLinesCovered: number, NumLinesUncovered: number}>('SELECT ApexClassOrTrigger.Name, NumLinesCovered, NumLinesUncovered FROM ApexCodeCoverageAggregate WHERE ApexClassOrTrigger.Name = \''+fileName+'\' LIMIT 1'); 
 	const coverageAggregate = result.records[0]; 
 
-	if(!result.records || !coverageAggregate || (coverageAggregate.NumLinesCovered === 0 && coverageAggregate.NumLinesUncovered === 0)){
+	if(!result.records || !coverageAggregate || coverageAggregate.NumLinesCovered === 0 || coverageAggregate.NumLinesUncovered === 0){
 		return;
 	}
 
 	const totalLines = coverageAggregate.NumLinesCovered + coverageAggregate.NumLinesUncovered;
 
-	const codeCoverage = (coverageAggregate.NumLinesCovered / totalLines) * 100;
-	const linesToNextPercentage = Math.ceil((Math.ceil(codeCoverage) / 100) * totalLines) - coverageAggregate.NumLinesCovered;
+	const percentage = (coverageAggregate.NumLinesCovered / totalLines) * 100;
+	var nextPercentage = Math.trunc(percentage + 1);
+	var linesToNextPercentage;
 
-	return {percentage : codeCoverage, linesToNextPercentage: linesToNextPercentage};
+	if(nextPercentage <= 100){
+		if(totalLines >= 100){
+			linesToNextPercentage = Math.ceil((nextPercentage / 100) * totalLines) - coverageAggregate.NumLinesCovered;
+		} else {
+			linesToNextPercentage = 1;
+			nextPercentage = Math.trunc((coverageAggregate.NumLinesCovered + 1) / totalLines * 100);
+		}
+	}
+
+	return {percentage, linesToNextPercentage, nextPercentage};
 };
 
 // Connection to the user's standard org

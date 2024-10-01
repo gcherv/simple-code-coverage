@@ -2,7 +2,7 @@
   "name": "simple-code-coverage",
   "displayName": "Simple Code Coverage",
   "description": "Real-time Apex code coverage for the current file, designed for Salesforce developers.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "gcherv",
   "icon": "images/icon.png",
   "engines": {
